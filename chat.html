@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <!--dm sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+    <title>Chat Twitch</title>
+</head>
+<body>
+    <!-- item will be appened to this layout -->
+    <div id="log" class="sl__chat__layout">
+      <div data-from="Nome" data-id="a1">
+        <div class="meta" style="background-color: #e4b3c5">
+        <span class="badges">
+        </span>
+      <span class="name">dikawaiii</span>
+    </div>
+
+    <div class="message">
+      <div class="container-message">
+        oi
+      </div>
+    </div>
+        
+
+    <!-- chat item -->
+    <script type="text/template" id="chatlist_item">
+    <div data-from="{from}" data-id="{messageId}">
+        <span class="meta" style="background-color: {color}">
+        <span class="badges">
+        </span>
+      <span class="name">{from}</span>
+    </span>
+
+    <span class="message">
+      {message}
+    </span>
+  </div>
+</script>
+
+
+
+<script>
+  // Variável para contar as mensagens
+  let messageCount = 0;
+
+  // Função para adicionar mensagens ao chat
+  function addMessage(from, message) {
+    messageCount++; // Incrementa o contador
+
+    // Cria um novo elemento de mensagem
+    const newMessage = document.createElement('div');
+    newMessage.setAttribute('data-from', from);
+    newMessage.setAttribute('data-id', `msg-${messageCount}`);
+
+    // Verifica se o contador é par ou ímpar para definir a cor
+    const bgColor = (messageCount % 2 === 0) ? '#adccd9' : '#e4b3c5';
+
+    // Define o conteúdo da mensagem com a cor alternada
+    newMessage.innerHTML = `
+      <div class="meta" style="background-color: ${bgColor}">
+        <span class="badges"></span>
+        <span class="name">${from}</span>
+      </div>
+      <div class="message">
+        <div class="container-message">${message}</div>
+      </div>
+    `;
+
+    // Adiciona a nova mensagem ao contêiner #log
+    document.getElementById('log').appendChild(newMessage);
+  }
+
+  // Exemplo de mensagens para teste
+  addMessage('JogaCoPai', 'opa');
+  addMessage('JogaCoPai', 'teste');
+  addMessage('BusaNoobando', 'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo');
+  addMessage('BusaNoobando', 'alanzoka clonado');
+  addMessage('BusaNoobando', 'alanzoka clonado');
+</script>
+</body>
+</html>

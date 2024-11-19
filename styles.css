@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f6f4f5;
+  font-family: Roboto;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5em;
+  color: #1d1c21;
+}
+
+#log > div {
+  position: relative;
+  padding-top: 21px;
+  margin-bottom: 10px;
+}
+#log > div {
+  animation: bounceInUp .3s ease forwards, fadeOut 0.5s ease 0 forwards;
+  -webkit-animation: bounceInUp .3s ease forwards, fadeOut 0.5s ease 0 forwards;
+}
+
+.colon { display: none; }
+
+#log {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0 10px 10px;
+}
+#log > div .deleted {
+  visibility: hidden;
+}
+
+/* USERNAME */
+
+#log .meta {
+  color: #fffffe;
+  position: absolute;
+  top: -7px;
+  left: 2px;
+  padding: 10px 10px;
+  line-height: 15px;
+  border-radius: 100px;
+  z-index: 1;
+
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+}
+#log .meta .badges {
+  float: left;
+  margin-right: 10px;
+}
+#log .meta .badges > img {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+#log .meta .badges > img:last-child {
+  margin-right: 0;
+}
+#log .meta .name {
+  float: left;
+  line-height: 21px;
+}
+
+/* ===== USERMESSAGE ===== */
+#log .message {
+  position: relative;
+  min-height: 20px;
+}
+#log .message .container-message {
+  height: fit-content;
+  min-width: 600px;
+  max-width: 600px;
+  padding-block: 15px;
+  padding-inline: 35px;
+  background-color: #fffffe;
+  
+  border: 1px dashed #bfb6ae;
+  border-radius: 100px;
+
+  display: inline-block;
+
+  word-break: break-all;
+
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 19px;
+}
+#log .message .container-message .emote {
+  background-image: none !important;
+}
+#log .message .container-message .emote img {
+  max-width: 25px;
+}
